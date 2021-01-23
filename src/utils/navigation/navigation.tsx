@@ -8,10 +8,11 @@ export default function Navigation() {
 
   return (
     <BrowserRouter>
-      {user?.data ? (
+      {user.id ? (
         <Switch>
           <Route path="/tiendas" component={Stores} />
           <Route path="/tienda" component={Store} />
+          <Route path="/" component={Store} />
         </Switch>
       ) : (
         <Switch>

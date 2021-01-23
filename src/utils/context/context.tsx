@@ -1,15 +1,16 @@
 import React, {createContext, useState, useEffect} from 'react';
+import {UserI} from '../interfaces/User';
 
 export const ARMcontext = createContext({
-  user: {} as any,
-  HandleUser: (user: object | any) => {},
+  user: {} as UserI,
+  HandleUser: (user: UserI) => {},
   HandleSignOut: () => {},
 });
 
 export const ARMprovider = ({children}: {children: any}) => {
-  const [user, setUser] = useState<any>({});
+  const [user, setUser] = useState<UserI>({});
 
-  function HandleUser(param: object | any): void {
+  function HandleUser(param: UserI): void {
     setUser(param);
     localStorage.setItem('user', JSON.stringify(param));
   }
