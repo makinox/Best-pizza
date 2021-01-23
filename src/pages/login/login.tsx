@@ -1,12 +1,10 @@
 import React from 'react';
-import {DuoContainer} from '../../components';
+import {DuoContainer, PreviewImage} from '../../components';
 
 export default function Login() {
   return (
     <DuoContainer>
-      <div>
-        <img src="" alt="" />
-      </div>
+      <PreviewImage animationTime="30s" />
       <div>
         <div>
           <img src="" alt="" />
