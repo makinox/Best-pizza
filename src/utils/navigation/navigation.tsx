@@ -1,5 +1,6 @@
-import React, {useContext} from 'react';
+import {useContext} from 'react';
 import {ARMcontext} from '../context/context';
+import {Login, Store, Stores} from '../../pages';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 export default function Navigation() {
@@ -9,12 +10,12 @@ export default function Navigation() {
     <BrowserRouter>
       {user?.data ? (
         <Switch>
-          <Route path="/" component={() => <div>hola</div>} />
+          <Route path="/tiendas" component={Stores} />
+          <Route path="/tienda" component={Store} />
         </Switch>
       ) : (
         <Switch>
-          <Route path="/tiendas" component={() => <div>mundo</div>} />
-          <Route path="/" component={() => <div>hola</div>} />
+          <Route path="/" component={Login} />
         </Switch>
       )}
     </BrowserRouter>
