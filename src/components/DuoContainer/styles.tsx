@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import {DuoContainerI} from './type';
 
-export const DuoContainer = styled.section`
-  justify-content: flex-start;
-  align-items: center;
+export const DuoContainer = styled.section<DuoContainerI>`
+  align-items: ${props => props.alignY};
   display: flex;
 `;

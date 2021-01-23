@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {PreviewPizzaImageI} from './type';
-import {loop} from '../../animation';
+import {loop} from '../../utils/styles/animation';
 
 export const PreviewContainer = styled.div`
   position: relative;
@@ -13,8 +13,10 @@ export const PreviewBackgroundImage = styled.img`
 
 export const PreviewPizzaContainer = styled.div`
   transform: translate(-50%, -50%);
-  width: 100%;
+  justify-content: center;
   position: absolute;
+  display: flex;
+  width: 100%;
   left: 50%;
   top: 50%;
 `;
