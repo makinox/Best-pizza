@@ -5,10 +5,11 @@ import {ContainerI} from './type';
 export const Container = styled.div<ContainerI>`
   align-items: ${props => props.alignItems};
   margin: ${props => props.margin};
+  max-height: 100vh;
   justify-content: center;
   flex-direction: column;
   position: relative;
-  overflow-x: auto;
+  overflow-y: auto;
   display: flex;
   width: 100%;
 
@@ -19,11 +20,11 @@ export const Container = styled.div<ContainerI>`
     margin: ${props => props.mediaMargin};
   }
 
-  /* ${props =>
+  ${props =>
     props.scrollView
       ? `
   @media (max-width: 1116px) {
-    height: 130vh;
+    height: 96.7vh;
   }`
-      : ``} */
+      : ``}
 `;

@@ -5,8 +5,14 @@ export const Container = styled.div`
   margin-bottom: 35px;
   margin-right: 20px;
   margin-left: 20px;
+  min-height: 490px;
+  overflow-y: auto;
   flex-wrap: wrap;
   display: flex;
+
+  @media (max-width: 1116px) {
+    margin-bottom: 0;
+  }
 
   @media (max-width: 766px) {
     justify-content: center;
