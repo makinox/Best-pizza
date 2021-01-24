@@ -1,17 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Data from '../../utils/api/Data';
+import {useHistory} from 'react-router-dom';
 import {StoreI} from '../../utils/interfaces/Store';
 import {CardContainer, StoresHeader, StoresThree, StoresTitles} from './styles';
 import {DuoContainer, Footer, LogOut, PageContainer, PizzaCard, PreviewImage} from '../../components';
+import {ARMcontext} from '../../utils/context/context';
 
 export default function Login() {
   const [data, useData] = useState<Array<StoreI>>([]);
+  const {HandleSignOut} = useContext(ARMcontext);
+  const history = useHistory();
 
   useEffect(() => {
     GetStoresData();
   }, []);
 
-  async function GetStoresData() {
+  async function GetStoresData(): Promise<void> {
     const DATA = new Data();
     const stores = await DATA.getData();
     useData(() => {
@@ -27,12 +31,17 @@ export default function Login() {
     });
   }
 
+  function HandleLogOut(): void {
+    HandleSignOut();
+    history.push('/');
+  }
+
   return (
     <DuoContainer alignY="flex-start">
       <PreviewImage animationTime="30s" />
       <PageContainer margin="20px 0 0 0" mediaMargin="20px 0 0 0" alignItems="initial">
         <StoresHeader>
-          <LogOut handleAction={() => {}} />
+          <LogOut handleAction={HandleLogOut} />
         </StoresHeader>
         <StoresThree>
           <span>Pizzerías</span>
