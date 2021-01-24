@@ -52,7 +52,7 @@ export default context('Store', () => {
   describe('Actions', () => {
     it('Store should redirect if user clicks in pizzerias label', () => {
       cy.get('[data-cy="page-tree"] > span:first').click();
-      cy.location('pathname').should('include', '/tienda/');
+      cy.location('pathname').should('include', '/tiendas');
     });
   });
 });

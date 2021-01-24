@@ -55,10 +55,3 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
-
-      - name: Saving build result
-        uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: dist
-          path: cypress.env.json
