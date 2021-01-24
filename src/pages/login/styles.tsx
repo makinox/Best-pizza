@@ -1,17 +1,5 @@
 import styled from 'styled-components';
 
-export const LoginContainer = styled.div`
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  display: flex;
-  width: 100%;
-
-  @media (max-width: 630px) {
-    margin-top: 50px;
-  }
-`;
-
 export const LoginHeader = styled.div`
   margin-bottom: 20px;
 
@@ -31,7 +19,7 @@ export const LoginTitles = styled.div`
   }
 
   & p {
-    color: rgb(112, 112, 112);
+    color: var(--TextSecondary);
     margin-bottom: 25px;
     font-weight: 400;
     margin-top: 10px;

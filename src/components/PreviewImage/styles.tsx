@@ -26,6 +26,7 @@ export const PreviewPizzaContainer = styled.div`
 `;
 
 export const PreviewPizzaImage = styled.img<PreviewPizzaImageI>`
+  transition: 0.3s ease;
   max-height: 500px;
   max-width: 500px;
   width: 90%;

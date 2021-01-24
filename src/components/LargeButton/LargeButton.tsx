@@ -6,7 +6,7 @@ export default function LargeButton({
   type = 'button',
 }: {
   text: string;
-  handleAction: (e?: any) => void | any;
+  handleAction: (e?: any) => void;
   type?: 'button' | 'submit' | 'reset';
 }) {
   return (

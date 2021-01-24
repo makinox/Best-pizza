@@ -3,6 +3,8 @@ import {createGlobalStyle} from 'styled-components';
 export default createGlobalStyle`
   :root {
     --BackgroundColor: #fff;
+    --TextPrimary: #000;
+    --TextSecondary: #707070;
   }
 
   body {

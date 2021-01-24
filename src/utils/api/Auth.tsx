@@ -1,7 +1,8 @@
 import {UserI} from '../interfaces/User';
+import {config} from '../config/config';
 
 export default class Auth {
-  private url: string = 'http://pruebas-muy-candidatos.s3.us-east-2.amazonaws.com/RH.json';
+  private url: string = config.armcareServerUrl;
 
   public async login(username: string, password: string): Promise<{status: boolean; data: UserI}> {
     const body: UserI = {
