@@ -2,9 +2,28 @@ import React, {useContext, useEffect, useState} from 'react';
 import Data from '../../utils/api/Data';
 import {useHistory} from 'react-router-dom';
 import {StoreI} from '../../utils/interfaces/Store';
-import {CardContainer, StoresTitles} from './styles';
 import {ARMcontext} from '../../utils/context/context';
-import {DuoContainer, Footer, LogOut, PageContainer, PageHeader, PageTree, PizzaCard, PreviewImage, SearchButton} from '../../components';
+import {
+  CardContainer,
+  DuoContainer,
+  Footer,
+  LogOut,
+  PageContainer,
+  PageHeader,
+  PageTitles,
+  PageTree,
+  PizzaCard,
+  PreviewImage,
+  SearchButton,
+} from '../../components';
+
+import Img1 from '../../assets/Panos_pizza.png';
+import Img2 from '../../assets/Sbarro.png';
+import Img3 from '../../assets/pizzeria_camion.png';
+import Img4 from '../../assets/voglia_di_pizza.png';
+import Img5 from '../../assets/stroller_pizza.png';
+import Img6 from '../../assets/trulli.png';
+const Images = [Img1, Img2, Img3, Img4, Img5, Img6];
 
 export default function Login() {
   const [data, useData] = useState<Array<StoreI>>([]);
@@ -61,13 +80,13 @@ export default function Login() {
         <PageTree>
           <span>Pizzerías</span>
         </PageTree>
-        <StoresTitles>
+        <PageTitles>
           <h2>Tiendas</h2>
           <p>Escoge tu pizzeria favorita</p>
-        </StoresTitles>
+        </PageTitles>
         <CardContainer>
           {filter.map((el: StoreI) => (
-            <PizzaCard key={el.id} store={el} handleAction={HandleCard} />
+            <PizzaCard key={el.id} store={el} handleAction={HandleCard} cardImages={Images} />
           ))}
         </CardContainer>
         <Footer />

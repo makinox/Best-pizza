@@ -1,11 +1,31 @@
 import React, {useContext, useEffect, useState} from 'react';
+import {ProductI} from '../../utils/interfaces/Product';
 import {useHistory, useParams} from 'react-router-dom';
 import {ARMcontext} from '../../utils/context/context';
-import {ProductI} from '../../utils/interfaces/Product';
-import {DuoContainer, Footer, LogOut, PageContainer, PageHeader, PageTree, PizzaCard, PreviewImage, SearchButton} from '../../components';
+import {StoreI} from '../../utils/interfaces/Store';
 import {FaAngleRight} from 'react-icons/fa';
 import Data from '../../utils/api/Data';
-import {StoreI} from '../../utils/interfaces/Store';
+import {
+  CardContainer,
+  DuoContainer,
+  Footer,
+  LogOut,
+  PageContainer,
+  PageHeader,
+  PageTitles,
+  PageTree,
+  PizzaCard,
+  PreviewImage,
+  SearchButton,
+} from '../../components';
+
+import Img1 from '../../assets/panos_pizza_1.png';
+import Img2 from '../../assets/sbarro_pizza.png';
+import Img3 from '../../assets/pizzeria_camion_pizza.png';
+import Img4 from '../../assets/vogliadipizza_pizza.png';
+import Img5 from '../../assets/stroller_pizza_1.png';
+import Img6 from '../../assets/trulli_pizza.png';
+const Images = [Img1, Img2, Img3, Img4, Img5, Img6];
 
 export default function Login() {
   const {HandleSignOut} = useContext(ARMcontext);
@@ -31,8 +51,12 @@ export default function Login() {
       useFilter(finalStoreData?.products || []);
     }
 
+    if (!id?.length) {
+      history.push('/tiendas');
+    }
+
     GetStoreData();
-  }, [id]);
+  }, [id, history]);
 
   function HandleLogOut(): void {
     HandleSignOut();
@@ -41,10 +65,14 @@ export default function Login() {
 
   function HandleSearch() {
     const input = window.prompt('Busca algun producto en particular?');
-    useFilter((prev?: Array<ProductI>) => {
-      const result = prev?.filter((el: ProductI) => el.name?.toLocaleLowerCase().includes(input?.toLocaleLowerCase() || ''));
+    useFilter(() => {
+      const result = data.products?.filter((el: ProductI) => el.name?.toLocaleLowerCase().includes(input?.toLocaleLowerCase() || ''));
       return result || [];
     });
+  }
+
+  function HandleBack() {
+    history.push('/tiendas');
   }
 
   return (
@@ -56,21 +84,20 @@ export default function Login() {
           <LogOut handleAction={HandleLogOut} />
         </PageHeader>
         <PageTree>
-          <span>Pizzerías</span>
+          <span onClick={HandleBack}>Pizzerías</span>
           <FaAngleRight />
           <span>{title}</span>
         </PageTree>
-        <div>
+        <PageTitles>
           <h2>{data.name}</h2>
           <p>{data.description}</p>
           <p>{data.address}</p>
-        </div>
-        <div>
-          {console.log(filter)}
+        </PageTitles>
+        <CardContainer>
           {filter?.map((el: ProductI) => (
-            <PizzaCard key={el.id} store={el} handleAction={() => {}} />
+            <PizzaCard key={el.id} store={el} handleAction={() => {}} cardImages={Images} />
           ))}
-        </div>
+        </CardContainer>
         <Footer />
       </PageContainer>
     </DuoContainer>

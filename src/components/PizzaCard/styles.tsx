@@ -17,6 +17,11 @@ export const PizzaCardContainer = styled.article`
     font-weight: 500;
     margin-top: 5px;
     font-size: 15px;
+
+    width: 180px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   & span {

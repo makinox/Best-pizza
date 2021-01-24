@@ -17,4 +17,8 @@ export const Three = styled.div`
     font-size: 14px;
     padding: 0 8px;
   }
+
+  & span:first-of-type {
+    cursor: pointer;
+  }
 `;
