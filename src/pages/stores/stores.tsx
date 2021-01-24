@@ -39,7 +39,7 @@ export default function Login() {
   return (
     <DuoContainer alignY="flex-start">
       <PreviewImage animationTime="30s" />
-      <PageContainer margin="20px 0 0 0" mediaMargin="20px 0 0 0" alignItems="initial">
+      <PageContainer margin="20px 0 0 0" mediaMargin="0 0 0 0" alignItems="initial">
         <StoresHeader>
           <LogOut handleAction={HandleLogOut} />
         </StoresHeader>
@@ -50,7 +50,6 @@ export default function Login() {
           <h2>Tiendas</h2>
           <p>Escoge tu pizzeria favorita</p>
         </StoresTitles>
-        {console.log(data)}
         <CardContainer>
           {data.map((el: StoreI) => (
             <PizzaCard key={el.id} store={el} />

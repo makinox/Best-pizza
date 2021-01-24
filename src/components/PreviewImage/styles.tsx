@@ -6,7 +6,7 @@ export const PreviewContainer = styled.div`
   position: relative;
   height: 100vh;
 
-  @media (max-width: 630px) {
+  @media (max-width: 766px) {
     display: none;
   }
 `;
