@@ -2,8 +2,13 @@ import styled from 'styled-components';
 
 export const StoresHeader = styled.div`
   justify-content: flex-end;
+  align-items: center;
   margin-right: 20px;
   display: flex;
+
+  & > div {
+    margin-left: 20px;
+  }
 `;
 
 export const StoresThree = styled.div`

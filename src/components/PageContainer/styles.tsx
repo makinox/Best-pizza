@@ -16,7 +16,7 @@ export const Container = styled.div<ContainerI>`
   ${slideIn({time: '.2s'})}
 
   @media (max-width: 630px) {
-    height: 100%;
+    height: 100% !important;
     margin: ${props => props.mediaMargin};
   }
 
