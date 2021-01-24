@@ -30,7 +30,7 @@ export default function Login() {
   return (
     <DuoContainer alignY="flex-start">
       <PreviewImage animationTime="30s" />
-      <PageContainer margin="20px 20px 0 20px" mediaMargin="20px 0 0 0" alignItems="initial">
+      <PageContainer margin="20px 0 0 0" mediaMargin="20px 0 0 0" alignItems="initial">
         <StoresHeader>
           <LogOut handleAction={() => {}} />
         </StoresHeader>

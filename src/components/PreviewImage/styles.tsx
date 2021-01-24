@@ -4,6 +4,7 @@ import {loop} from '../../utils/styles/animation';
 
 export const PreviewContainer = styled.div`
   position: relative;
+  height: 100vh;
 
   @media (max-width: 630px) {
     display: none;

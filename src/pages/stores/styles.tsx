@@ -2,11 +2,13 @@ import styled from 'styled-components';
 
 export const StoresHeader = styled.div`
   justify-content: flex-end;
+  margin-right: 20px;
   display: flex;
 `;
 
 export const StoresThree = styled.div`
   margin-bottom: 20px;
+  margin-left: 20px;
   margin-top: 10px;
 
   & span {
@@ -18,6 +20,8 @@ export const StoresThree = styled.div`
 `;
 
 export const StoresTitles = styled.div`
+  margin-left: 20px;
+
   & h2 {
     margin-bottom: 10px;
     margin-top: 5px;
@@ -32,6 +36,9 @@ export const StoresTitles = styled.div`
 
 export const CardContainer = styled.div`
   justify-content: flex-start;
+  margin-bottom: 35px;
+  margin-right: 20px;
+  margin-left: 20px;
   flex-wrap: wrap;
   display: flex;
 
