@@ -19,14 +19,14 @@ export const StoresThree = styled.div`
 
 export const StoresTitles = styled.div`
   & h2 {
-    margin-top: 5px;
     margin-bottom: 10px;
+    margin-top: 5px;
   }
 
   & p {
     color: var(--TextSecondary);
-    margin-top: 0;
     margin-bottom: 40px;
+    margin-top: 0;
   }
 `;
 
@@ -36,6 +36,7 @@ export const CardContainer = styled.div`
   display: flex;
 
   & > article {
+    margin-bottom: 20px;
     margin-right: 30px;
   }
 `;
