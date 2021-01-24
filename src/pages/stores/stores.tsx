@@ -1,8 +1,32 @@
-import React from 'react';
-import {DuoContainer, LogOut, PageContainer, PreviewImage} from '../../components';
-import {StoresHeader} from './styles';
+import React, {useEffect, useState} from 'react';
+import Data from '../../utils/api/Data';
+import {StoreI} from '../../utils/interfaces/Store';
+import {CardContainer, StoresHeader, StoresThree, StoresTitles} from './styles';
+import {DuoContainer, Footer, LogOut, PageContainer, PizzaCard, PreviewImage} from '../../components';
 
 export default function Login() {
+  const [data, useData] = useState<Array<StoreI>>([]);
+
+  useEffect(() => {
+    GetStoresData();
+  }, []);
+
+  async function GetStoresData() {
+    const DATA = new Data();
+    const stores = await DATA.getData();
+    useData(() => {
+      if (stores.status) {
+        const extraMuted = JSON.parse(JSON.stringify(stores.data[0]));
+        extraMuted.id = 6;
+        stores.data.push(extraMuted);
+        return stores.data;
+      } else {
+        alert('Stores cant be fetched');
+        return [];
+      }
+    });
+  }
+
   return (
     <DuoContainer alignY="flex-start">
       <PreviewImage animationTime="30s" />
@@ -10,26 +34,20 @@ export default function Login() {
         <StoresHeader>
           <LogOut handleAction={() => {}} />
         </StoresHeader>
-        <div>
-          <span>Pizzerias</span>
-        </div>
-        <div>
+        <StoresThree>
+          <span>Pizzerías</span>
+        </StoresThree>
+        <StoresTitles>
           <h2>Tiendas</h2>
-          <span>Escoge tu pizzeria favorita</span>
-        </div>
-        <div>
-          <span>1</span>
-          <span>1</span>
-          <span>1</span>
-          <span>1</span>
-        </div>
-        <footer>
-          <div>
-            <span>face</span>
-            <span>insta</span>
-          </div>
-          <div>best</div>
-        </footer>
+          <p>Escoge tu pizzeria favorita</p>
+        </StoresTitles>
+        {console.log(data)}
+        <CardContainer>
+          {data.map((el: StoreI) => (
+            <PizzaCard key={el.id} store={el} />
+          ))}
+        </CardContainer>
+        <Footer />
       </PageContainer>
     </DuoContainer>
   );

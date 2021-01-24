@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const LargeButtonContainer = styled.button`
   box-shadow: 0 5px 8px 2px rgba(0, 0, 0, 0.1);
-  background-color: rgb(242, 197, 93);
+  background-color: #f2c55d;
   border-radius: 2px;
   max-width: 400px;
   cursor: pointer;

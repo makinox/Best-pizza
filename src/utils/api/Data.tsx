@@ -4,7 +4,7 @@ import {StoreI} from '../interfaces/Store';
 export default class Data {
   private url: string = config.armcareServerUrl;
 
-  public async getData(): Promise<{status: boolean; data: StoreI}> {
+  public async getData(): Promise<{status: boolean; data: Array<StoreI>}> {
     try {
       const response = await fetch(this.url);
       const data = await response.json();
@@ -12,10 +12,10 @@ export default class Data {
       if (data?.response) {
         return {status: true, data: data.response.stores};
       } else {
-        return {status: false, data: {name: 'Network error'}};
+        return {status: false, data: [{name: 'Network error'}]};
       }
     } catch (e) {
-      return {status: false, data: {name: 'Network error'}};
+      return {status: false, data: [{name: 'Network error'}]};
     }
   }
 }
