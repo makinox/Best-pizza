@@ -7,7 +7,7 @@ export const Container = styled.div`
   margin-left: 20px;
   padding-top: 10px;
   padding-left: 10px;
-  min-height: 490px;
+  min-height: 505px;
   overflow-y: auto;
   flex-wrap: wrap;
   display: flex;

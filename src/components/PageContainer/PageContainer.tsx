@@ -1,14 +1,14 @@
 import {Container} from './styles';
 
 export default function PageContainer({
-  margin,
+  padding,
   children,
   scrollView,
   mediaMargin,
   alignItems = 'center',
   dataCy = 'page-container',
 }: {
-  margin: string;
+  padding: string;
   dataCy?: string;
   scrollView: boolean;
   mediaMargin: string;
@@ -16,7 +16,7 @@ export default function PageContainer({
   children: React.ReactNode;
 }) {
   return (
-    <Container margin={margin} mediaMargin={mediaMargin} alignItems={alignItems} scrollView={scrollView} data-cy={dataCy}>
+    <Container padding={padding} mediaMargin={mediaMargin} alignItems={alignItems} scrollView={scrollView} data-cy={dataCy}>
       {children}
     </Container>
   );

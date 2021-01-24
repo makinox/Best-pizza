@@ -7,6 +7,10 @@ export const FooterContainer = styled.footer`
   align-items: center;
   padding: 18px 30px;
   display: flex;
+
+  /* position: absolute;
+  bottom: 0;
+  width: 100%; */
 `;
 
 export const FooterContainerDetail = styled.div`

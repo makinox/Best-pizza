@@ -4,7 +4,7 @@ import {ContainerI} from './type';
 
 export const Container = styled.div<ContainerI>`
   align-items: ${props => props.alignItems};
-  margin: ${props => props.margin};
+  padding: ${props => props.padding};
   max-height: 96.7vh;
   justify-content: center;
   flex-direction: column;

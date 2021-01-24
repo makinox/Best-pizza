@@ -34,7 +34,7 @@ export default function Login() {
   return (
     <DuoContainer alignY="center">
       <PreviewImage animationTime={animation} />
-      <PageContainer margin="0 0 0 0" mediaMargin="50px 0 0 0" scrollView={false}>
+      <PageContainer padding="0 0 0 0" mediaMargin="50px 0 0 0" scrollView={false}>
         <LoginHeader>
           <img src={PizzaLogo} alt="Best pizza logo" />
         </LoginHeader>
