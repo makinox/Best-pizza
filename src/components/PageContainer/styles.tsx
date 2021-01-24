@@ -15,12 +15,16 @@ export const Container = styled.div<ContainerI>`
 
   ${slideIn({time: '.2s'})}
 
-  @media (max-width: 1116px) {
-    height: 130vh;
-  }
-
   @media (max-width: 630px) {
     height: 100%;
     margin: ${props => props.mediaMargin};
   }
+
+  ${props =>
+    props.scrollView
+      ? `
+  @media (max-width: 1116px) {
+    height: 130vh;
+  }`
+      : ``}
 `;

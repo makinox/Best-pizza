@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 export const PizzaCardContainer = styled.article`
   cursor: pointer;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   & img {
     width: 180px;
