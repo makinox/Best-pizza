@@ -34,8 +34,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Create env files
+      - name: Create test files
         run: echo '{"BASE_URL":"${{secrets.BASE_URL}}"}' > cypress.env.json
+
+      - name: Create env files
+        run: echo 'REACT_APP_SERVER_URL=${{secrets.REACT_APP_SERVER_URL}}' > .env
 
       - name: Running install process
         run: yarn install
