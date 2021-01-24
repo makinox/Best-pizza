@@ -5,7 +5,7 @@ import {ContainerI} from './type';
 export const Container = styled.div<ContainerI>`
   align-items: ${props => props.alignItems};
   margin: ${props => props.margin};
-  max-height: 100vh;
+  max-height: 96.7vh;
   justify-content: center;
   flex-direction: column;
   position: relative;
@@ -23,7 +23,7 @@ export const Container = styled.div<ContainerI>`
   ${props =>
     props.scrollView
       ? `
-  @media (max-width: 1116px) {
+  @media (max-width: 1133px) {
     height: 96.7vh;
   }`
       : ``}

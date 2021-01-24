@@ -42,7 +42,7 @@ export default function Login() {
           <h1>Bienvenido</h1>
           <p>A las mejores pizzas del país</p>
         </LoginTitles>
-        <form onSubmit={HandleLogin}>
+        <form onSubmit={HandleLogin} cy-data="login-form">
           <LoginInput>
             <input placeholder="Email" {...UserName} />
             <img src={UsuarioLogo} alt="Input username logo" />

@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+cypress/videos
+cypress/screenshots
 
 # production
 /build
@@ -23,3 +25,4 @@ yarn-debug.log*
 yarn-error.log*
 .eslintcache
 .env
+cypress.env.json

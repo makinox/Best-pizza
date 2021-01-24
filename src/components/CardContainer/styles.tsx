@@ -5,17 +5,20 @@ export const Container = styled.div`
   margin-bottom: 35px;
   margin-right: 20px;
   margin-left: 20px;
+  padding-top: 10px;
+  padding-left: 10px;
   min-height: 490px;
   overflow-y: auto;
   flex-wrap: wrap;
   display: flex;
 
-  @media (max-width: 1116px) {
+  @media (max-width: 1133px) {
     margin-bottom: 0;
   }
 
   @media (max-width: 766px) {
     justify-content: center;
+    padding-left: 0;
 
     & > article {
       margin-right: 15px !important;
