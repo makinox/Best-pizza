@@ -35,7 +35,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Create test files
-        run: echo '{"BASE_URL":"${{secrets.BASE_URL}}"}' > cypress.env.json
+        run: echo '{"BASE_URL":"${{secrets.BASE_URL}}","BASE_TEST_USER":"${{secrets.BASE_TEST_USER}}",BASE_TEST_PASSWORD":"${{secrets.BASE_TEST_PASSWORD}}"}' > cypress.env.json
 
       - name: Create env files
         run: echo 'REACT_APP_SERVER_URL=${{secrets.REACT_APP_SERVER_URL}}' > .env

@@ -1,4 +1,4 @@
-# Best pizza 📋
+# Best pizza 🍕
 
 Used:
 
