@@ -11,7 +11,7 @@ export default function Navigation() {
       {user.id ? (
         <Switch>
           <Route path="/tiendas" component={Stores} />
-          <Route path="/tienda" component={Store} />
+          <Route exact path="/tienda/:title/:id" component={Store} />
           <Route path="/" component={Store} />
         </Switch>
       ) : (

@@ -10,9 +10,9 @@ import {PizzaCardContainer} from './styles';
 
 const Images = [Img1, Img2, Img3, Img4, Img5, Img6];
 
-export default function PizzaCard({store}: {store: StoreI}) {
+export default function PizzaCard({store, handleAction}: {store: StoreI; handleAction: (e?: StoreI) => void}) {
   return (
-    <PizzaCardContainer>
+    <PizzaCardContainer onClick={() => handleAction(store)}>
       <img src={Images[(store.id || 1) - 1]} alt={`${store.name} store`} />
       <h6>{store.name}</h6>
       <span>{store.address}</span>

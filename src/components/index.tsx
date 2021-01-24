@@ -4,6 +4,8 @@ export {default as DuoContainer} from './DuoContainer/DuoContainer';
 export {default as PreviewImage} from './PreviewImage/PreviewImage';
 export {default as SearchButton} from './SearchButton/SearchButton';
 export {default as LargeButton} from './LargeButton/LargeButton';
+export {default as PageHeader} from './PageHeader/PageHeader';
 export {default as PizzaCard} from './PizzaCard/PizzaCard';
+export {default as PageTree} from './PageTree/PageTree';
 export {default as Footer} from './Footer/Footer';
 export {default as LogOut} from './LogOut/LogOut';

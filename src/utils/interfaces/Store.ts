@@ -1,9 +1,9 @@
-import {ProductsI} from './Products';
+import {ProductI} from './Product';
 
 export interface StoreI {
   id?: number;
   name?: string;
   address?: string;
   description?: string;
-  stores?: Array<ProductsI>;
+  products?: Array<ProductI>;
 }

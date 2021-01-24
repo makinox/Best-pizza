@@ -1,29 +1,5 @@
 import styled from 'styled-components';
 
-export const StoresHeader = styled.div`
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 20px;
-  display: flex;
-
-  & > div {
-    margin-left: 20px;
-  }
-`;
-
-export const StoresThree = styled.div`
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-top: 10px;
-
-  & span {
-    border-bottom: 2px solid var(--YellowPrimary);
-    color: var(--TextSecondary);
-    font-size: 14px;
-    padding: 0 8px;
-  }
-`;
-
 export const StoresTitles = styled.div`
   margin-left: 20px;
 

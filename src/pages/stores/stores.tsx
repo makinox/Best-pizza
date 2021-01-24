@@ -2,9 +2,9 @@ import React, {useContext, useEffect, useState} from 'react';
 import Data from '../../utils/api/Data';
 import {useHistory} from 'react-router-dom';
 import {StoreI} from '../../utils/interfaces/Store';
+import {CardContainer, StoresTitles} from './styles';
 import {ARMcontext} from '../../utils/context/context';
-import {CardContainer, StoresHeader, StoresThree, StoresTitles} from './styles';
-import {DuoContainer, Footer, LogOut, PageContainer, PizzaCard, PreviewImage, SearchButton} from '../../components';
+import {DuoContainer, Footer, LogOut, PageContainer, PageHeader, PageTree, PizzaCard, PreviewImage, SearchButton} from '../../components';
 
 export default function Login() {
   const [data, useData] = useState<Array<StoreI>>([]);
@@ -18,7 +18,7 @@ export default function Login() {
 
   async function GetStoresData(): Promise<void> {
     const DATA = new Data();
-    const stores = await DATA.getData();
+    const stores = await DATA.getStores();
     const finalStoreData = [];
 
     if (stores.status) {
@@ -39,32 +39,35 @@ export default function Login() {
     history.push('/');
   }
 
-  function HandleSearch() {
+  function HandleSearch(): void {
     const input = window.prompt('Busca alguna tienda en particular?');
     useFilter(prev => {
       return prev.filter((el: StoreI) => el.name?.toLocaleLowerCase().includes(input?.toLocaleLowerCase() || ''));
     });
   }
 
+  function HandleCard(store?: StoreI): void {
+    history.push(`/tienda/${store?.name?.replaceAll(' ', '-')}/${store?.id}`);
+  }
+
   return (
     <DuoContainer alignY="flex-start">
       <PreviewImage animationTime="30s" />
       <PageContainer margin="20px 0 0 0" mediaMargin="0 0 0 0" alignItems="initial" scrollView={true}>
-        <StoresHeader>
+        <PageHeader>
           <SearchButton handleAction={HandleSearch} />
           <LogOut handleAction={HandleLogOut} />
-        </StoresHeader>
-        <StoresThree>
+        </PageHeader>
+        <PageTree>
           <span>Pizzerías</span>
-        </StoresThree>
+        </PageTree>
         <StoresTitles>
           <h2>Tiendas</h2>
           <p>Escoge tu pizzeria favorita</p>
         </StoresTitles>
         <CardContainer>
-          {console.log({filter, data})}
           {filter.map((el: StoreI) => (
-            <PizzaCard key={el.id} store={el} />
+            <PizzaCard key={el.id} store={el} handleAction={HandleCard} />
           ))}
         </CardContainer>
         <Footer />
