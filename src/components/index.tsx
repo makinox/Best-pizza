@@ -1,6 +1,6 @@
 export {default as PageContainer} from './PageContainer/PageContainer';
 export {default as CardContainer} from './CardContainer/CardContainer';
-export {default as GlobalStyles} from './GlobalStyles/GlobalStyles';
+export {default as GlobalStyles} from './globalStyles/GlobalStyles';
 export {default as DuoContainer} from './DuoContainer/DuoContainer';
 export {default as PreviewImage} from './PreviewImage/PreviewImage';
 export {default as SearchButton} from './SearchButton/SearchButton';
