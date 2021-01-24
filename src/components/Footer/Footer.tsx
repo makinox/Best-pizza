@@ -5,7 +5,7 @@ import PizzaIcon from '../../assets/Best Pizza.png';
 
 export default function Footer() {
   return (
-    <FooterContainer>
+    <FooterContainer data-cy="footer">
       <FooterContainerDetail>
         <a href="https://facebook.com/">
           <FaFacebookSquare fontSize={25} />

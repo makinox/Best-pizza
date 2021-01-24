@@ -3,7 +3,7 @@
 /// <reference types="cypress" />
 
 declare namespace Cypress {
-  interface Chainable {
+  export interface Chainable {
     /**
      * Custom command to login
      * @example cy.login()
