@@ -12,6 +12,7 @@ import {
   PageHeader,
   PageTitles,
   PageTree,
+  PageWrapper,
   PizzaCard,
   PreviewImage,
   SearchButton,
@@ -72,25 +73,27 @@ export default function Login() {
   return (
     <DuoContainer alignY="flex-start">
       <PreviewImage animationTime="30s" />
-      <PageContainer padding="26px 0 0 0" mediaMargin="10px 0 0 0" alignItems="initial" scrollView={true}>
-        <PageHeader>
-          <SearchButton handleAction={HandleSearch} />
-          <LogOut handleAction={HandleLogOut} />
-        </PageHeader>
-        <PageTree>
-          <span>Pizzerías</span>
-        </PageTree>
-        <PageTitles>
-          <h2>Tiendas</h2>
-          <p>Escoge tu pizzeria favorita</p>
-        </PageTitles>
-        <CardContainer>
-          {filter.map((el: StoreI) => (
-            <PizzaCard key={el.id} store={el} handleAction={HandleCard} cardImages={Images} />
-          ))}
-        </CardContainer>
-        <Footer />
-      </PageContainer>
+      <PageWrapper>
+        <PageContainer padding="26px 0 0 0" mediaMargin="10px 0 0 0" alignItems="initial" scrollView={true}>
+          <PageHeader>
+            <SearchButton handleAction={HandleSearch} />
+            <LogOut handleAction={HandleLogOut} />
+          </PageHeader>
+          <PageTree>
+            <span>Pizzerías</span>
+          </PageTree>
+          <PageTitles>
+            <h2>Tiendas</h2>
+            <p>Escoge tu pizzeria favorita</p>
+          </PageTitles>
+          <CardContainer>
+            {filter.map((el: StoreI) => (
+              <PizzaCard key={el.id} store={el} handleAction={HandleCard} cardImages={Images} />
+            ))}
+          </CardContainer>
+          <Footer />
+        </PageContainer>
+      </PageWrapper>
     </DuoContainer>
   );
 }

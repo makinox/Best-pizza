@@ -4,6 +4,7 @@ export {default as GlobalStyles} from './globalStyles/GlobalStyles';
 export {default as DuoContainer} from './DuoContainer/DuoContainer';
 export {default as PreviewImage} from './PreviewImage/PreviewImage';
 export {default as SearchButton} from './SearchButton/SearchButton';
+export {default as PageWrapper} from './PageWrapper/PageWrapper';
 export {default as LargeButton} from './LargeButton/LargeButton';
 export {default as PageTitles} from './PageTitles/PageTitles';
 export {default as PageHeader} from './PageHeader/PageHeader';

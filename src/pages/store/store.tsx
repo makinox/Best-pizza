@@ -14,6 +14,7 @@ import {
   PageHeader,
   PageTitles,
   PageTree,
+  PageWrapper,
   PizzaCard,
   PreviewImage,
   SearchButton,
@@ -81,30 +82,32 @@ export default function Login() {
   }
 
   return (
-    <DuoContainer alignY="flex-start">
+    <DuoContainer alignY="flex-start" background={false}>
       <PreviewImage animationTime="30s" />
-      <PageContainer padding="26px 0 0 0" mediaMargin="10px 0 0 0" alignItems="initial" scrollView={true}>
-        <PageHeader>
-          <SearchButton handleAction={HandleSearch} />
-          <LogOut handleAction={HandleLogOut} />
-        </PageHeader>
-        <PageTree>
-          <span onClick={HandleBack}>Pizzerías</span>
-          <FaAngleRight />
-          <span>{title}</span>
-        </PageTree>
-        <PageTitles>
-          <h2>{data.name}</h2>
-          <p>{data.description}</p>
-          <p>{data.address}</p>
-        </PageTitles>
-        <CardContainer>
-          {filter?.map((el: ProductI) => (
-            <PizzaCard key={el.id} store={el} handleAction={() => {}} cardImages={Images} />
-          ))}
-        </CardContainer>
-        <Footer />
-      </PageContainer>
+      <PageWrapper>
+        <PageContainer padding="26px 0 0 0" mediaMargin="10px 0 0 0" alignItems="initial" scrollView={true}>
+          <PageHeader>
+            <SearchButton handleAction={HandleSearch} />
+            <LogOut handleAction={HandleLogOut} />
+          </PageHeader>
+          <PageTree>
+            <span onClick={HandleBack}>Pizzerías</span>
+            <FaAngleRight />
+            <span>{title}</span>
+          </PageTree>
+          <PageTitles>
+            <h2>{data.name}</h2>
+            <p>{data.description}</p>
+            <p>{data.address}</p>
+          </PageTitles>
+          <CardContainer>
+            {filter?.map((el: ProductI) => (
+              <PizzaCard key={el.id} store={el} handleAction={() => {}} cardImages={Images} />
+            ))}
+          </CardContainer>
+          <Footer />
+        </PageContainer>
+      </PageWrapper>
     </DuoContainer>
   );
 }

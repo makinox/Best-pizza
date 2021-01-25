@@ -3,6 +3,7 @@ import {createGlobalStyle} from 'styled-components';
 export default createGlobalStyle`
   :root {
     --BackgroundColor: #fff;
+    --BackgroundSecondary: #1f1f1f;
     --TextPrimary: #000;
     --TextSecondary: #707070;
     --YellowPrimary: #f2c55d;

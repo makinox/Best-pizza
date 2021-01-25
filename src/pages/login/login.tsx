@@ -32,7 +32,7 @@ export default function Login() {
   }
 
   return (
-    <DuoContainer alignY="center">
+    <DuoContainer alignY="center" background={true}>
       <PreviewImage animationTime={animation} />
       <PageContainer padding="0 0 0 0" mediaMargin="50px 0 0 0" scrollView={false}>
         <LoginHeader>
