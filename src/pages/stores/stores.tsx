@@ -15,7 +15,7 @@ import {
   PageWrapper,
   PizzaCard,
   PreviewImage,
-  SearchButton,
+  // SearchButton,
 } from '../../components';
 
 import Img1 from '../../assets/Panos_pizza.png';
@@ -59,12 +59,12 @@ export default function Login() {
     history.push('/');
   }
 
-  function HandleSearch(): void {
-    const input = window.prompt('Busca alguna tienda en particular?');
-    useFilter(prev => {
-      return prev.filter((el: StoreI) => el.name?.toLocaleLowerCase().includes(input?.toLocaleLowerCase() || ''));
-    });
-  }
+  // function HandleSearch(): void {
+  //   const input = window.prompt('Busca alguna tienda en particular?');
+  //   useFilter(prev => {
+  //     return prev.filter((el: StoreI) => el.name?.toLocaleLowerCase().includes(input?.toLocaleLowerCase() || ''));
+  //   });
+  // }
 
   function HandleCard(store?: StoreI): void {
     history.push(`/tienda/${store?.name?.replaceAll(' ', '-')}/${store?.id}`);
