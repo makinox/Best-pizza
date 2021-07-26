@@ -87,7 +87,7 @@ export default function Login() {
       <PageWrapper>
         <PageContainer padding="26px 0 0 0" mediaMargin="10px 0 0 0" alignItems="initial" scrollView={true}>
           <PageHeader>
-            <SearchButton handleAction={HandleSearch} />
+            {/* <SearchButton handleAction={HandleSearch} /> */}
             <LogOut handleAction={HandleLogOut} />
           </PageHeader>
           <PageTree>
